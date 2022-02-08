@@ -16,8 +16,9 @@ class Trie {
 		TrieNode node = root;
 		for (char c : word.toCharArray()) {
 			if (node.children[c - 'a'] == null) {
-				node = node.children[c - 'a'];
+				node.children[c - 'a'] = new TrieNode();
 			}
+			node = node.children[c - 'a'];
 		}
 		node.isWord = true;
 	}
